@@ -21,9 +21,13 @@ public class Post {
     @Column(nullable = false)
     private String content;
 
+    @Column(nullable = false)
+    private Long memberId;
+
     @Builder
-    public Post(String title, String content) {
+    public Post(String title, String content, Long memberId) {
         this.title = title;
         this.content = content;
+        this.memberId = memberId;
     }
 }
