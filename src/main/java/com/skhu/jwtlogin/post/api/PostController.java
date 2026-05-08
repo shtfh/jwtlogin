@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/posts")
 public class PostController {
 
     private final PostService postService;
 
-    @GetMapping("/api/posts")
+    @GetMapping
     public ApiResTemplate<?> getPosts() {
         return ApiResTemplate.successResponse(
                 SuccessCode.GET_SUCCESS,
@@ -23,7 +24,7 @@ public class PostController {
         );
     }
 
-    @PostMapping("/api/posts")
+    @PostMapping
     public ApiResTemplate<?> createPost(
             Authentication authentication,
             @Valid @RequestBody PostCreateRequest request
