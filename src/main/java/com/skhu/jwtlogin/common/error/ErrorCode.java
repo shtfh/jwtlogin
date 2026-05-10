@@ -15,7 +15,8 @@ public enum ErrorCode {
 
     MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 사용자가 없습니다.", "NOT_FOUND_404"),
 
-    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "알 수 없는 서버 에러가 발생햇습니다.", "INTERNAL_SERVER_ERROR_500");
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "알 수 없는 서버 에러가 발생햇습니다.", "INTERNAL_SERVER_ERROR_500"),
+    NO_AUTHORIZATION_EXCEPTION(HttpStatus.UNAUTHORIZED, "인증에 실패하였습니다.", "UNAUTHORIZED_401");
 
     private final HttpStatus httpStatus;
     private final String message;
