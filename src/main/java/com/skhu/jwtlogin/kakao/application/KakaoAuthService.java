@@ -44,7 +44,7 @@ public class KakaoAuthService {
         Member member = memberRepository.findByKakaoId(userInfoResponse.id())
                 .orElseGet(() -> saveMember(userInfoResponse));
 
-        String accessToken = jwtProvider.createAccessToken(member.getMemberId());
+        String accessToken = jwtProvider.createAccessToken(member);
 
         return new KakaoLoginResponse(
                 member.getMemberId(),
